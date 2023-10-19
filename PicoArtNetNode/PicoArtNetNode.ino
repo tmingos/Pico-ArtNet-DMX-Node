@@ -33,8 +33,8 @@
 #define OUTPUT_B_GPIO 1
 
 // Configure WiFi
-const char* ssid = "your-wifi-ssid";
-const char* password = "your-wifi-password";
+const char* SSID = "your-wifi-ssid";
+const char* PASSWORD = "your-wifi-password";
 
 // Create a universe
 #define UNIVERSE_LENGTH 512
@@ -47,7 +47,7 @@ ArtnetWifi artnet;
 DmxOutput dmx[2];
 
 // Init OLED display for displaying WiFi status and configuration info
-OLED oled(display, OUTPUT_A_UNIVERSE, OUTPUT_B_UNIVERSE, ssid);
+OLED oled(display, OUTPUT_A_UNIVERSE, OUTPUT_B_UNIVERSE, SSID);
 
 // Connect to Wifi
 bool connectToWifi(void)
@@ -58,7 +58,7 @@ bool connectToWifi(void)
   // Connect to WiFi  
   oled.displayWifiConnecting();
   Serial.print("Connecting");
-  WiFi.begin(ssid, password);
+  WiFi.begin(SSID, PASSWORD);
 
   while (WiFi.status() != WL_CONNECTED) {
     delay(250);
@@ -73,7 +73,7 @@ bool connectToWifi(void)
   // Display WiFi connection result
   if (connected) {
     Serial.print("Connected to ");
-    Serial.println(ssid);
+    Serial.println(SSID);
     Serial.print("IP: ");
     Serial.println(IPAddress(WiFi.localIP()));
     oled.displayWifiConnected(WiFi.localIP().toString().c_str());
