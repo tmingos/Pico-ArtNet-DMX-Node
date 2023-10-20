@@ -16,9 +16,9 @@ Add the following url to the Additional Board Manager URLs field in the Arduino 
 https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
 
 
-Next, install the RP2040 board in the Arduino IDE. Go to Tools → Board → Boards Manager. Scroll down until you find Raspberry Pi Pico/RP2040 and click on Install.
+Next, install the Pico board in the Arduino IDE. Go to Tools → Board → Boards Manager. Scroll down until you find Raspberry Pi Pico/RP2040 and click on Install. Make sure to then select the Raspberry Pi Pico W board under Tools → Board.
 
-Be sure to install the following dependencies:
+Make sure to install the following dependencies:
 
 Dependencies:
   - ArtnetWifi by Nathanaël Lécaudé, Stephan Ruloff (Tested with 1.5.1)
